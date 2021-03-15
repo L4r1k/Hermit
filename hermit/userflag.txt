@@ -1,0 +1,1 @@
+flag{a_picture_paints_a_thousand_shells}

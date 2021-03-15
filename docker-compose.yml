@@ -1,0 +1,12 @@
+version: "3"
+services:
+        hermit:
+                build: .
+                ports:
+                        - "80:80"
+                        - "2222:22"
+                environment: 
+                        - "APACHE_RUN_USER=hermit"
+                        - "APACHE_RUN_GROUP=hermit"
+                container_name: hermit 
+                restart: always
