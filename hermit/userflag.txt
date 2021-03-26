@@ -1,1 +1,1 @@
-flag{a_picture_paints_a_thousand_shells}
+UMASS{a_picture_paints_a_thousand_shells}

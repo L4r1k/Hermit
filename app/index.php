@@ -57,7 +57,7 @@
         <img src="data:image/png;base64,<?php echo base64_encode(file_get_contents('./resources/hermit.jpg')); ?>">
 
         <form action="upload.php" method="post" enctype="multipart/form-data">
-          Henry the Hermit is looking for new shells. Upload your shell here: 
+          Henry the Hermit is looking for new shells. Upload your images here: 
           <input type="file" name="fileToUpload" id="fileToUpload">
           <input type="submit" value="Upload Image" name="submit">
         </form>

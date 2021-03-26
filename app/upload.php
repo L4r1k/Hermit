@@ -1,6 +1,7 @@
 <?php
   $target_dir = "uploads/";
   $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+  $filename = tempnam($target_dir, '');
   $uploadOk = 1;
   $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
@@ -23,9 +24,9 @@
     echo "<a href='/'>Back</a>";
   // if everything is ok, try to upload file
   } else {
-    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-      echo "<p>The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])) . " has been uploaded to /var/www/html/uploads/" . $_FILES["fileToUpload"]["name"] . "</p>";
-      $path = "/show.php?filename=" . rawurlencode($_FILES['fileToUpload']['name']);
+    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $filename)) {
+      echo "<p>The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])) . " has been uploaded to " . $filename . "</p>";
+      $path = "/show.php?filename=" . rawurlencode(basename($filename));
       echo "<a href=$path>See Image</a>";
     } else {
       echo "<p>Sorry, there was an error uploading your file.</p>";

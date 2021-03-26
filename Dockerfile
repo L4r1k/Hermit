@@ -7,7 +7,8 @@ RUN apt update
 RUN apt install openssh-server less sudo -y
 RUN useradd -m hermit; usermod -aG sudo hermit 
 RUN chmod 444 /etc/sudoers
-RUN echo "hermit ALL = (root) NOPASSWD: /usr/bin/less /home/hermit/sudo-backup.sh, /bin/less /home/hermit/sudo-backup.sh, /bin/less sudo-backup.sh" >> /etc/sudoers
+#RUN echo "hermit ALL = (root) NOPASSWD: /usr/bin/less /home/hermit/sudo-backup.sh, /bin/less /home/hermit/sudo-backup.sh, /bin/less sudo-backup.sh" >> /etc/sudoers
+RUN echo "hermit ALL = (root) NOPASSWD: /bin/gzip -f /root/rootflag.txt -t" >> /etc/sudoers
 
 COPY ./app ${APP_HOME}
 COPY ./hermit/ /home/hermit/
