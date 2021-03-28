@@ -3,7 +3,7 @@ services:
         hermit:
                 build: .
                 ports:
-                        - "80:80"
+                        - "8080:80"
                         - "2222:22"
                 environment: 
                         - "APACHE_RUN_USER=hermit"
